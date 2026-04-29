@@ -4,7 +4,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "deploy": "npm run build && git add . && git commit -m 'Auto-deploy Keonite' && git push origin main"
     },
     "devDependencies": {
         "@inertiajs/vue3": "^2.0.0",
