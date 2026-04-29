@@ -18,16 +18,27 @@ php artisan breeze:install vue
 
 npm install @remixicon/vue
 
+#Database
+
+download dbngin
+download tableplus
+create connection
+create database exact name in .env 
+
 fix databes in .env file
 
 also in .env:
 APP_ENV=production
 APP_DEBUG=false
 
+php artisan migrate
+
+#Deploy
 in gitignore file, put # in /public/build
 
 in package.json:
 scripts{
-"deploy": "npm run build && git add . && git commit -m 'Auto-deploy Keonite' && git push origin main" 
-}
+"deploy": "npm run build && git add . && git commit -m 'Auto-deploy Keonite' && git push origin main" }
 
+git check out production 
+git push --set-upstream origin production
