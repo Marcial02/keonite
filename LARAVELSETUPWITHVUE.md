@@ -40,5 +40,10 @@ in package.json:
 scripts{
 "deploy": "npm run build && git add . && git commit -m 'Auto-deploy Keonite' && git push origin main" }
 
+
 git check out production 
 git push --set-upstream origin production
+
+.htaccess sa labas
+vendor zip and extract sa mismong loob ng hostinger
+change .env sa mismong loob ng hostinger
