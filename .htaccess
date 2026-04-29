@@ -1,4 +1,30 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    # --- 1. GOOGLE DRIVE REDIRECTS ---
+    # Inilalagay natin ito sa itaas para ma-process agad bago ang Laravel/Public routing
+
+    RewriteRule ^cabusasportfolio$ https://drive.google.com/file/d/1HrCdsl6OrAyNrkB09eAey_nHquuG2Ger/view?usp=sharing [L,R=301]
+    RewriteRule ^cabusasportfoliosa$ https://drive.google.com/file/d/1_G0Z-wzz0WZiE_zHjuRVmdE9uDn95wAv/view?usp=sharing [L,R=301]
+    RewriteRule ^cabusasportfoliopc$ https://drive.google.com/file/d/1toWCBoped8UV20DodbDxjx59qZ9pZ6Y_/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusasportfoliopa$ https://drive.google.com/drive/folders/1Mt-n1W2G6MZAIa6JBlTCrjxnWRZADmOd?usp=sharing [L,R=301]
+    RewriteRule ^cabusas-portfolio-sapdev$ https://drive.google.com/file/d/1_YIlUhuu9KSzaDnLW3evxU5e9gP8SkAI/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-portfolio-dev$ https://drive.google.com/file/d/1H-vdWjPPQ1EJAvpvJXz-p6FVIdgOzEV-/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-portfolio-devin$ https://drive.google.com/file/d/1-hGeSbJA-PA6bFEiFwu47g7XZuOsI9M_/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-portfolio-jdev$ https://drive.google.com/file/d/1bsP8HuyWDz-Qh_NI1qPvzqDvA6y5ZZTY/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-portfolio-softdev$ https://drive.google.com/file/d/1Yo5beupvY4iacTr1WZPOjVMLnoshuXfm/view?usp=drivesdk [L,R=301]
+
+    RewriteRule ^cabusascvsa$ https://drive.google.com/file/d/1dR_83vTbdFjst2DNocPtJceQgBZi1_QU/view?usp=sharing [L,R=301]
+    RewriteRule ^cabusascvpc$ https://drive.google.com/file/d/1mfteMFJzQYpDCD3eoYsyYDldT0IdCibr/view?usp=sharing [L,R=301]
+    RewriteRule ^cabusas-cv-sapdev$ https://drive.google.com/file/d/1eG922qCc5RZy9JO2l0K2_tLBsPmINq8g/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-cv-dev$ https://drive.google.com/file/d/1WTnTMTk4GsKjN8Lpd41eNrKwRTRoJmXY/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-cv-devin$ https://drive.google.com/file/d/1IXKoCCDVlRnSf-VueyH6u9n1bJMydoWW/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-cv-jdev$ https://drive.google.com/file/d/1quqUkLfRR5EfPaLSXtV5jbap38pW76r9/view?usp=drive_link [L,R=301]
+    RewriteRule ^cabusas-cv-softdev$ https://drive.google.com/file/d/1Yo5beupvY4iacTr1WZPOjVMLnoshuXfm/view?usp=drivesdk [L,R=301]
+
+    # --- 2. SUBDIRECTORY ROUTING ---
+    # Ito yung nagpapagana sa site mo para lumabas ang laman ng /public
+    RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ public/$1 [L]
+
 </IfModule>

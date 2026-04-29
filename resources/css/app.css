@@ -14,12 +14,5 @@ body{
 *, input, button{
 font-family: "EB Garamond", sans-serif;
 }
-button:focus,
-input:focus,
-a:focus {
-    outline: 1px solid #888; /* Changes the focus ring color */
-    outline-offset: 2px;       /* Adds space between element and ring */
-    background-color: #eff6ff;  /* Optional: change the background */
-}
 
 

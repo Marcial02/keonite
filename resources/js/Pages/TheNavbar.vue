@@ -14,7 +14,8 @@ import { Link } from '@inertiajs/vue3';
 
             <div class="search-container">
                 <RiSearch2Line class="search-icon" />
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search..."
+                class="focus:outline-none focus:ring-0 focus:shadow-none">
             </div>
 
         </div>
