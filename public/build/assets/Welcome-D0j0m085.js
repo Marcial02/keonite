@@ -1,0 +1,1 @@
+import{d as e,g as t,j as n,t as r,v as i,w as a}from"./app-_fCtnRDK.js";import{t as o}from"./GuestLayout-DI8shly9.js";var s={__name:`Welcome`,props:{canLogin:{type:Boolean},canRegister:{type:Boolean},laravelVersion:{type:String,required:!0},phpVersion:{type:String,required:!0}},setup(s){return(s,c)=>(a(),t(e,null,[i(n(r),{title:`Welcome`}),i(o)],64))}};export{s as default};
