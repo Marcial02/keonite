@@ -41,3 +41,12 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/run-migrate', function () {
+    Artisan::call('migrate:fresh', [
+        '--force' => true,
+    ]);
+    return "Migration successful!";
+});
