@@ -44,9 +44,8 @@ require __DIR__.'/auth.php';
 
 use Illuminate\Support\Facades\Artisan;
 
-Route::get('/run-migrate', function () {
-    Artisan::call('migrate:fresh', [
-        '--force' => true,
-    ]);
-    return "Migration successful!";
+Route::get('/init-db', function () {
+    // Ang --force ay kailangan dahil APP_ENV=production ang Hostinger mo
+    Artisan::call('migrate --force');
+    return "Database migration successful!";
 });
