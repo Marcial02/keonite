@@ -21,6 +21,9 @@
         "vue": "^3.4.0"
     },
     "dependencies": {
-        "@remixicon/vue": "^4.9.0"
+        "@remixicon/vue": "^4.9.0",
+        "@tiptap/pm": "^3.22.5",
+        "@tiptap/starter-kit": "^3.22.5",
+        "@tiptap/vue-3": "^3.22.5"
     }
 }

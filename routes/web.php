@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\NovelController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,8 +17,22 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard', [
+        'novels' => auth()->user()->novels()->latest()->get()
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/create', [NovelController::class, 'create'])->middleware(['auth', 'verified'])->name('create');
+// Idagdag mo rin ito para sa submit button:
+Route::post('/novels', [NovelController::class, 'store'])->middleware(['auth', 'verified'])->name('novels.store');
+
+// Page para magsulat ng bagong chapter
+Route::get('/novels/{novel}/chapters/create', [ChapterController::class, 'create'])
+    ->name('chapters.create'); // <--- DAPAT SAKTO ITONG PANGALAN NA 'TO
+
+// Command para i-save ang chapter
+Route::post('/chapters', [ChapterController::class, 'store'])->name('chapters.store');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

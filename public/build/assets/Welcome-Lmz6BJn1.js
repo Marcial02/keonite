@@ -1,0 +1,1 @@
+import{D as e,R as t,d as n,g as r,t as i,v as a}from"./app-AnJndJ27.js";import{t as o}from"./GuestLayout-BhyvXjaO.js";var s={__name:`Welcome`,props:{canLogin:{type:Boolean},canRegister:{type:Boolean},laravelVersion:{type:String,required:!0},phpVersion:{type:String,required:!0}},setup(s){return(s,c)=>(e(),r(n,null,[a(t(i),{title:`Welcome`}),a(o)],64))}};export{s as default};

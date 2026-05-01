@@ -8,7 +8,7 @@ import { Link } from '@inertiajs/vue3';
 
         <div class="nav-div left">
 
-            <Link to="/home">
+            <Link href="/home">
                 <img class="keonite-logo" src="/keoniteLogo.svg" alt="Keonite Logo" >
             </Link>
 
@@ -22,17 +22,17 @@ import { Link } from '@inertiajs/vue3';
 
         <div class="nav-div center">
 
-            <Link to="/comics">Comics</Link>
+            <Link href="/comics">Comics</Link>
             <div class="line"></div>
-            <Link to="/novels">Novels</Link>
+            <Link href="/novels">Novels</Link>
             <div class="line"></div>
-            <Link to="/animations">Animations</Link>
+            <Link href="/animations">Animations</Link>
         </div>
 
         <div class="nav-div right">
-            <Link to="/create">Create</Link>
-            <Link to="/login">Log in</Link>
-            <Link to="/signup">Sign up</Link>
+            <Link href="/create">Create</Link>
+            <Link href="/login">Log in</Link>
+            <Link href="/register">Sign up</Link>
         </div>
 
 

@@ -5,10 +5,10 @@ import TheNavbar from '@/Pages/TheNavbar.vue';
 </script>
 
 <template>
+    <TheNavbar/>
     <div
         class="flex flex-col items-center bg-gray-100 pt-6 sm:justify-center"
     >
-    <TheNavbar/>
         <div>
             <Link href="/">
                 <ApplicationLogo class="h-20 w-20 fill-current text-gray-500" />

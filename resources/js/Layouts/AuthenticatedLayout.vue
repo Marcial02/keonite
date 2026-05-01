@@ -6,11 +6,13 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import TheNavbar from '@/Pages/TheNavbar.vue';
 
 const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
+
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav
@@ -30,6 +32,7 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
+
                             <div
                                 class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex"
                             >
@@ -38,6 +41,12 @@ const showingNavigationDropdown = ref(false);
                                     :active="route().current('dashboard')"
                                 >
                                     Dashboard
+                                </NavLink>
+                                <NavLink
+                                    :href="route('create')"
+                                    :active="route().current('create')"
+                                >
+                                    Create
                                 </NavLink>
                             </div>
                         </div>
