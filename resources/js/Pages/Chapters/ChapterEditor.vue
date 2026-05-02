@@ -1,20 +1,39 @@
 <script setup>
-import { Editor, EditorContent } from '@tiptap/vue-3';
+import { useEditor, EditorContent } from '@tiptap/vue-3';
 import StarterKit from '@tiptap/starter-kit';
 import { watch } from 'vue'
+import axios from 'axios';
+import { debounce } from 'lodash'; // Install mo muna: npm install lodash
 
 const props = defineProps({
     modelValue: String,
+    chapterId: [Number, String], // Kailangan natin 'to para malaman kung anong chapter ang i-auautosave
 })
 
 const emit = defineEmits(['update:modelValue'])
+
+// 1. Ang Auto-save function
+const handleAutosave = debounce((content) => {
+    if (!props.chapterId) return; // Wag mag-save kung wala pang ID
+
+    axios.post(`/api/chapters/${props.chapterId}/autosave`, {
+        content: content
+    })
+    .then(() => console.log('Draft saved!'))
+    .catch(err => console.error('Autosave failed:', err));
+}, 3000); // Mag-aantay ng 3 seconds bago mag-save
 
 const editor = useEditor({
     content: props.modelValue,
     extensions: [StarterKit],
     onUpdate: ({ editor }) => {
-        // Ipinapasa ang content pabalik sa form
-        emit('update:modelValue', editor.getHTML())
+       const html = editor.getHTML()
+
+        // 1. Oks na 'to para sa main form (Inertia)
+        emit('update:modelValue', html)
+
+        // 2. DAGDAG MO 'TO: Para tumawag sa API auto-save
+        handleAutosave(html)
     },
 })
 

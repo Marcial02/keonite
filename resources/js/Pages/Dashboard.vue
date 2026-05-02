@@ -45,9 +45,10 @@ defineProps({
     + Add Chapter
 </Link>
 
-                                <button class="text-xs text-indigo-500 font-semibold border border-indigo-500 px-3 py-2 rounded hover:bg-indigo-50">
+                                <Link class="text-xs text-indigo-500 font-semibold border border-indigo-500 px-3 py-2 rounded hover:bg-indigo-50"
+                                :href="route('novels.manuscript', { novel: novel.id })">
                                     View Manuscript
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

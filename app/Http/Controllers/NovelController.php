@@ -31,9 +31,11 @@ class NovelController extends Controller
         return redirect()->route('dashboard');
     }
     // NovelController.php
-public function show(Novel $novel) {
-    return Inertia::render('ViewManuscript', [
-        'novel' => $novel->load('chapters'), // Siguraduhing naka-load ang chapters
+public function showManuscript(Novel $novel) {
+    return Inertia::render('Novels/Manuscript', [
+        'novel' => $novel->load(['chapters' => function($query) {
+            $query->orderBy('created_at', 'asc');
+        }]),
     ]);
 }
 }

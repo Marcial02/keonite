@@ -27,6 +27,9 @@ Route::get('/create', [NovelController::class, 'create'])->middleware(['auth', '
 // Idagdag mo rin ito para sa submit button:
 Route::post('/novels', [NovelController::class, 'store'])->middleware(['auth', 'verified'])->name('novels.store');
 
+// view manuscript
+Route::get('/novels/{novel}/manuscript', [NovelController::class, 'showManuscript'])->name('novels.manuscript');
+
 // Page para magsulat ng bagong chapter
 Route::get('/novels/{novel}/chapters/create', [ChapterController::class, 'create'])
     ->name('chapters.create'); // <--- DAPAT SAKTO ITONG PANGALAN NA 'TO
