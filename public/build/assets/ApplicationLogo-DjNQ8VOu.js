@@ -1,0 +1,1 @@
+import{S as e,l as t,o as n}from"./runtime-core.esm-bundler-DXQR_T0o.js";import{t as r}from"./_plugin-vue_export-helper-B80Cc4Ui.js";var i={},a={class:`flex lg:col-start-1 lg:justify-center`};function o(r,i){return e(),t(`div`,a,[...i[0]||=[n(`img`,{src:`keoniteLogo.svg`,alt:``,class:`w-20 object-cover h-10`},null,-1)]])}var s=r(i,[[`render`,o]]);export{s as t};
