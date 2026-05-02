@@ -97,7 +97,7 @@ function handleImageError() {
                  <footer
                     class="py-16 text-center text-sm text-white dark:text-white/70"
                 >
-                    <a href="https://keonite.com/" target="_blank">© 2026 Keonite.com</a> | Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
+                    <a href="https://keonite.com/" target="_blank">© 2026 Keonite.com</a> . All Rights Reserved . Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})
                 </footer>
                     </div>
                 </div>
