@@ -30,4 +30,10 @@ class NovelController extends Controller
         // 3. Pagkatapos ma-save, ibabalik ka nito sa Dashboard
         return redirect()->route('dashboard');
     }
+    // NovelController.php
+public function show(Novel $novel) {
+    return Inertia::render('ViewManuscript', [
+        'novel' => $novel->load('chapters'), // Siguraduhing naka-load ang chapters
+    ]);
+}
 }
